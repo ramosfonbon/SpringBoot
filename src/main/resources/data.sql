@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS tipo;
 
 create table producto
 (
-    productoId IDENTITY NOT NULL PRIMARY KEY ,
+    productoId int AUTO_INCREMENT NOT NULL PRIMARY KEY ,
     nombre varchar (40) not null ,
     precio double ,
     existencia int ,
@@ -12,7 +12,7 @@ create table producto
 
 create table tipo
 (
-    tipoId IDENTITY NOT NULL PRIMARY KEY ,
+    tipoId int AUTO_INCREMENT NOT NULL PRIMARY KEY ,
     descripcion varchar (40)  not null
 );
 
