@@ -2,6 +2,7 @@ package ramosfonbon.northwind.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 import ramosfonbon.northwind.model.Producto;
 import ramosfonbon.northwind.model.ProductoTipo;
@@ -28,6 +29,19 @@ public class ProductoController {
     @GetMapping(value = "/listProductos")
     public List<Producto> getListProductos(){
         return productoRepository.findAll();
+    }
+
+    @GetMapping(value = "/listProductosByTipo/{tipoId}")
+    public List<Producto> getProductosbyTipo
+                          (@PathVariable("tipoId") int tipoId){
+        return productoRepository.findAllByTipoId(tipoId);
+
+    }
+
+    @GetMapping(value = "/producto/{productoId}")
+    public Producto getProducto(@PathVariable("productoId") int productoId){
+
+        return productoRepository.findByProductoId(productoId);
     }
 
 }

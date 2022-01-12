@@ -10,5 +10,6 @@ public interface TipoRepository
 
     List<Tipo> findAll();
     Tipo findByTipoId(int tipoId);
+
 }
 

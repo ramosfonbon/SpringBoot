@@ -12,4 +12,8 @@ public interface ProductoRepository extends
 
     public List<Producto> findAll();
 
+    public List<Producto> findAllByTipoId(int tipoId);
+
+    public Producto findByProductoId(int productoId);
+
 }

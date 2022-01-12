@@ -13,8 +13,6 @@ public class Tipo {
     @Column(name = "descripcion")
     private String descripcion;
 
-
-
     public Tipo() {
     }
 
