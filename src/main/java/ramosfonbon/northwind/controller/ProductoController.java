@@ -38,6 +38,17 @@ public class ProductoController {
 
     }
 
+
+    @GetMapping(value = "/productoPrecio/{precio}")
+    public List<Producto> getProductosbyPrecio
+            (@PathVariable("precio") double precio){
+        return productoRepository.findAllByPrecioLessThanOrderByPrecio(precio);
+
+    }
+
+
+
+
     @GetMapping(value = "/producto/{productoId}")
     public Producto getProducto(@PathVariable("productoId") int productoId){
 

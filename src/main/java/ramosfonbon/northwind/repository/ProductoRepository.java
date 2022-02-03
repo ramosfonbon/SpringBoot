@@ -16,4 +16,6 @@ public interface ProductoRepository extends
 
     public Producto findByProductoId(int productoId);
 
+    public List<Producto> findAllByPrecioLessThanOrderByPrecio(double precio);
+
 }
