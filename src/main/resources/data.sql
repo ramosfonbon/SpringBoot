@@ -25,7 +25,7 @@ values ('Aceite', 24, 20, 3);
 
 insert into tipo (descripcion) values ('Abarrotes');
 insert into tipo (descripcion) values ('Alimentos Preparados');
-
+insert into tipo (descripcion) values ('Lacteos');
 
 DROP TABLE IF EXISTS Customers;
 

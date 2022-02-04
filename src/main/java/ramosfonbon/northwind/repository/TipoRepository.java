@@ -10,7 +10,13 @@ public interface TipoRepository
         extends CrudRepository<Tipo, Long> {
 
     List<Tipo> findAll();
+    List<Tipo> findAllByTipoIdLessThan(int tipoId);
     Tipo findByTipoId(int tipoId);
-    
+
+    Tipo save(Tipo tipo);
+    void delete(Tipo tipo);
+
+    void deleteAllByDescripcion(String descripcion);
+
 }
 
