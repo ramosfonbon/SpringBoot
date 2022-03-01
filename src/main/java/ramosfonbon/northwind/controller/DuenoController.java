@@ -23,6 +23,23 @@ public class DuenoController {
         return duenoRepository.save(dueno);
     }
 
+    @PostMapping(value = "/dueno/mod")
+    Dueno modDueno(@RequestBody Dueno dueno){
+        Dueno d = duenoRepository.findByDuenoId(dueno.getDuenoId());
+        if (d != null) {
+            d.setDireccion(dueno.getDireccion());
+            d.setTelefono(dueno.getTelefono());
+            duenoRepository.save(d);
+            return d;
+        } else {
+            return null;
+
+        }
+
+
+
+    }
+
     // ........./dueno/del/4
     @GetMapping(value = "/dueno/del/{duenoid}")
     Boolean delDueno(@PathVariable("duenoid") int duenoId){
